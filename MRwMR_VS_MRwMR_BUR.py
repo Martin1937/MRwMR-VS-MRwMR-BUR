@@ -312,11 +312,11 @@ def Calculation(order,train_data,train_label,vali_data,vali_label):
 	RF_acc = []
 	for index in range(0,num_of_features):
 		if len(feature_train)==0:
-			feature_train = train_data[:,index].reshape(-1,1)
-			feature_vali = vali_data[:,index].reshape(-1,1)
+			feature_train = train_data[:,order[index]].reshape(-1,1)
+			feature_vali = vali_data[:,order[index]].reshape(-1,1)
 		else:
-			feature_train = np.hstack((feature_train,train_data[:,index].reshape(-1,1)))
-			feature_vali = np.hstack((feature_vali,vali_data[:,index].reshape(-1,1)))
+			feature_train = np.hstack((feature_train,train_data[:,order[index]].reshape(-1,1)))
+			feature_vali = np.hstack((feature_vali,vali_data[:,order[index]].reshape(-1,1)))
 		
 		MLP.fit(feature_train,train_label)
 		pred_result = MLP.predict(feature_vali)
