@@ -68,7 +68,7 @@ def MIM_selection(temp_data,temp_label):
 def MIM_selection_UR(temp_data,temp_label):
 	bias = bias_value(temp_data,temp_label)
 	MI = mutual_info_classif(temp_data,temp_label)
-	MI_UR = (1-beta)*MI + MI*beta 
+	MI_UR = (1-beta)*MI + bias*beta 
 	selection_order_BUR = np.argsort(MI_UR)[::-1]
 	return selection_order_BUR
 
