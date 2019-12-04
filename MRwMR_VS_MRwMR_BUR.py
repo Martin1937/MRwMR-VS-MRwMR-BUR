@@ -34,7 +34,7 @@ SVM = svm.SVC(kernel='linear')
 RandomForest = RandomForestClassifier(n_estimators=50, criterion='entropy')
 
 beta = 0.1
-num_of_features = 100
+num_of_features = 150
 
 #Function to calculate the UR of each feature
 #Input: 2D Array:(Sample, Features) and Label
